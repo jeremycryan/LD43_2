@@ -1,0 +1,64 @@
+##!/usr/bin/env python
+import pygame
+
+WINDOW_WIDTH = 1280
+WINDOW_HEIGHT = 720
+WINDOW_SIZE = WINDOW_WIDTH, WINDOW_HEIGHT
+
+TILE_WIDTH = 64
+MAX_FRAME_SIZE = (TILE_WIDTH * 20, TILE_WIDTH * 30)
+
+PIT = "."
+FLOOR = ","
+WALL = "W"
+PLAYER = "P"
+BLOCK = "B"
+GOAL = "G"
+ELEVATED = "E"
+UNPASSABLE = "U"
+
+SHRINES = ["S"]
+DOORS = ["1"]
+
+DOWN = 0
+LEFT = 1
+RIGHT = 2
+UP = 3
+DASH = 4
+PUSH = 5
+JUMP = 6
+RESET = 7
+HINT = 8
+CONTROLS = {pygame.K_DOWN: DOWN,
+    pygame.K_UP: UP,
+    pygame.K_LEFT: LEFT,
+    pygame.K_RIGHT: RIGHT,
+    pygame.K_z: DASH,
+    pygame.K_x: PUSH,
+    pygame.K_c: JUMP}
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GRAY = (100, 100, 100)
+
+HUD_KEY_Y = WINDOW_HEIGHT - 120
+HUD_KEY_X = 40
+R_HUD_OFF = 6
+HUD_KEY_ORDER = {
+    DASH: 0,
+    PUSH: 1,
+    JUMP: 2,
+    LEFT: 3 + R_HUD_OFF,
+    UP: 4 + R_HUD_OFF,
+    DOWN: 4 + R_HUD_OFF,
+    RIGHT: 5 + R_HUD_OFF
+}
+
+HUD_KEY_WIDTH = 80
+HUD_KEY_HEIGHT = 75
+UP_OFFSET = HUD_KEY_HEIGHT+20
+
+HUD_L_RECT = (25, WINDOW_HEIGHT - 140, 315, 110)
+HUD_R_RECT = (WINDOW_WIDTH - 360, WINDOW_HEIGHT - 240, 320, 210)
+
+HUD_KEY_X_SPACING = 20
